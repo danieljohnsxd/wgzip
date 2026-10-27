@@ -12,7 +12,7 @@ description: Compress or decompress GZIP in pure TypeScript with wgzip — synch
 - On **Node** with no portability need, `node:zlib` (`gzipSync`, `gunzipSync`) is native: ~1.6x faster encode, 2-4x faster decode.
 - **Browser `fetch` with `Content-Encoding: gzip`**: the browser already decoded it. Do not gunzip `response.body` again.
 - **Static assets**: precompress at build time with native gzip/brotli/zstd; do not use a JS encoder.
-- zstd data is the sibling `wzstd`; image uploads (resize / re-encode) are the sibling `wimgs`. Not covered here: zlib (RFC 1950) wrapper, raw deflate API, ZIP.
+- zstd data is the sibling `wzstd`; image uploads (resize / re-encode) are the sibling `wimages`. Not covered here: zlib (RFC 1950) wrapper, raw deflate API, ZIP.
 
 ## Happy path
 

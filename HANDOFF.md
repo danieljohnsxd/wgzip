@@ -133,9 +133,9 @@ is still chain 4 / nice 8 vs chain 1024 / nice 258.
 Every wgzip encode in `pnpm bench:encode` / `bench:decode` is checked under
 **node + fflate** gunzip (full byte compare). CI: `tests/cross_gunzip_test.ts`.
 Huffman/match changes must stay RFC 1951/1952 — other decoders are the oracle.
-`.github/workflows/ci.yml` runs `pnpm check` + `pnpm test` on Node 22/24 and a
-round-trip smoke (`scripts/smoke_runtime.ts`) on Deno and Bun; `publish.yml`
-publishes with npm provenance on a GitHub release.
+`.github/workflows/ci.yml` runs build, `pnpm check` and `pnpm test` on Node 24.
+Deno/Bun are checked locally with `scripts/smoke_runtime.ts`. `release.yml`
+publishes with npm provenance (trusted publishing) on a `v*` tag.
 
 ## Next focus (suggestions)
 

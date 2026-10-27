@@ -22,7 +22,7 @@ const back = decompress(gz); // verified; output capped at 64 MiB by default
 - Async streaming of trusted data: the built-in `CompressionStream("gzip")` is fine.
 - Node-only code that can use native: `node:zlib` is faster.
 - A browser `fetch` with `Content-Encoding: gzip` is already decoded — don't gunzip it again. Precompress static assets at build time with native tools.
-- zstd: sibling package [wzstd](https://github.com/danieljohnsxd/wzstd). Image uploads (resize / re-encode): sibling package [wimgs](https://github.com/danieljohnsxd/wimgs).
+- zstd: sibling package [wzstd](https://github.com/danieljohnsxd/wzstd). Image uploads (resize / re-encode): sibling package [wimages](https://github.com/danieljohnsxd/wimages).
 
 An agent skill with the same guidance ships in the package: [`skills/gzip/SKILL.md`](skills/gzip/SKILL.md).
 
