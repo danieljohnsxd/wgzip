@@ -1,0 +1,94 @@
+{
+	"name": "wgzip",
+	"version": "0.1.0",
+	"description": "Pure TypeScript GZIP codec (ES2022 ESM). One-shot, push, and TransformStream encode/decode: compressFast / CompressFast / compressFastStream, Strong counterparts, decompress / Decompress / decompressStream. Node 22+, Deno, Bun, Workers, Convex, and similar runtimes.",
+	"keywords": [
+		"bun",
+		"compress",
+		"compression",
+		"convex",
+		"decompression",
+		"deflate",
+		"deno",
+		"esm",
+		"gzip",
+		"stream",
+		"tanstack-intent",
+		"typescript",
+		"workers"
+	],
+	"homepage": "https://github.com/danieljohnsxd/wgzip#readme",
+	"bugs": {
+		"url": "https://github.com/danieljohnsxd/wgzip/issues"
+	},
+	"license": "MIT",
+	"author": "Daniel Johns",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/danieljohnsxd/wgzip.git"
+	},
+	"files": [
+		"dist",
+		"skills",
+		"LICENSE",
+		"README.md"
+	],
+	"type": "module",
+	"sideEffects": false,
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js",
+			"default": "./dist/index.js"
+		},
+		"./compressFast": {
+			"types": "./dist/compressFast.d.ts",
+			"import": "./dist/compressFast.js",
+			"default": "./dist/compressFast.js"
+		},
+		"./compressStrong": {
+			"types": "./dist/compressStrong.d.ts",
+			"import": "./dist/compressStrong.js",
+			"default": "./dist/compressStrong.js"
+		},
+		"./decompress": {
+			"types": "./dist/decompress.d.ts",
+			"import": "./dist/decompress.js",
+			"default": "./dist/decompress.js"
+		}
+	},
+	"publishConfig": {
+		"access": "public",
+		"provenance": true
+	},
+	"scripts": {
+		"build": "tsdown",
+		"check": "pnpm run fmt:check && pnpm run lint && pnpm run typecheck",
+		"clean": "rm -rf dist",
+		"fmt": "oxfmt .",
+		"fmt:check": "oxfmt --check .",
+		"format": "pnpm run fmt",
+		"lint": "oxlint .",
+		"lint:fix": "oxlint --fix .",
+		"prepack": "pnpm run build",
+		"test": "pnpm run build && node scripts/run_test.ts",
+		"typecheck": "tsc --noEmit -p tsconfig.json",
+		"bench:encode": "pnpm run build && node scripts/bench_encode.ts",
+		"bench:decode": "pnpm run build && node scripts/bench_decode.ts",
+		"bench:check": "pnpm run build && node scripts/bench_check.ts"
+	},
+	"devDependencies": {
+		"@types/node": "^24.13.3",
+		"fflate": "^0.8.3",
+		"oxfmt": "^0.74.0",
+		"oxlint": "^1.89.0",
+		"oxlint-tsgolint": "^7.0.2005",
+		"tsdown": "^0.23.2",
+		"typescript": "7.1.0-beta"
+	},
+	"engines": {
+		"node": ">=22"
+	},
+	"packageManager": "pnpm@12.0.0"
+}
